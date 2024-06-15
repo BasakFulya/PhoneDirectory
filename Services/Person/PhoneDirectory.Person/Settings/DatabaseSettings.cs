@@ -1,6 +1,6 @@
 ﻿namespace PhoneDirectory.Person.Settings
 {
-    public class DatabaseSettings
+    public class DatabaseSettings : IDatabaseSettings
     {
         public string PersonCollectionName { get; set; }
         public string ContactInfoCollectionName { get; set; }

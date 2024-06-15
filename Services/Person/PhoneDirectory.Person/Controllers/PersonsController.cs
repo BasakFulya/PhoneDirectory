@@ -31,24 +31,24 @@ namespace PhoneDirectory.Person.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CratePerson(CreatePersonDto createPersonDto)
+        public async Task<IActionResult> CreatePerson(CreatePersonDto createPersonDto)
         {
             await _personService.CreatePersonAsync(createPersonDto);
-            return Ok("Kişi başarıyla eklendi.");
+            return Ok("Person is successfully added!");
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeletePerson(string id)
         {
             await _personService.DeletePersonAsync(id);
-            return Ok("Kişi başarıyla silindi.");
+            return Ok("Person is successfully deleted!");
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdatePerson(UpdatePersonDto updatePersonDto)
         {
             await _personService.UpdatePersonAsync(updatePersonDto);
-            return Ok("Kişi başarıyla güncellendi.");
+            return Ok("Person is successfully updated!");
         }
     }
 }

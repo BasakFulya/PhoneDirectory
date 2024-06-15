@@ -34,21 +34,21 @@ namespace PhoneDirectory.Person.Controllers
         public async Task<IActionResult> CrateContactInfo(CreateContactInfoDto createContactInfoDto)
         {
             await _contactInfoService.CreateContactInfoAsync(createContactInfoDto);
-            return Ok("İletişim bilgileri başarıyla eklendi.");
+            return Ok("Contact Info is successfully added!");
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteContactInfo(string id)
         {
             await _contactInfoService.DeleteContactInfoAsync(id);
-            return Ok("İletişim bilgileri başarıyla silindi.");
+            return Ok("Contact Info is successfully deleted!");
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateContactInfo(UpdateContactInfoDto updateContactInfoDto)
         {
             await _contactInfoService.UpdateContactInfoAsync(updateContactInfoDto);
-            return Ok("İletişim bilgileri başarıyla güncellendi.");
+            return Ok("Contact Info is successfully updated!");
         }
     }
 }

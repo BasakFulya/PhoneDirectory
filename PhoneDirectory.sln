@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{07EEFA65-9CD1-4488-B767-620A6BA066DB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersonInfo", "PersonInfo", "{E949618E-DC3C-40BA-A942-D80F65D864A5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Person", "Person", "{E949618E-DC3C-40BA-A942-D80F65D864A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Report", "Report", "{BBF19265-81D9-49EC-B8AE-974BDAA59972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneDirectory.PersonInfo", "Services\Person\PhoneDirectory.Person\PhoneDirectory.PersonInfo.csproj", "{5FE86624-8A81-4CB0-A9AC-41D1EC6EC3A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneDirectory.Person", "Services\Person\PhoneDirectory.Person\PhoneDirectory.Person.csproj", "{5FE86624-8A81-4CB0-A9AC-41D1EC6EC3A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

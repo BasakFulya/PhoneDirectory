@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Options;
+using PhoneDirectory.Report.Services.KafkaService;
 using PhoneDirectory.Report.Services.ReportService;
 using PhoneDirectory.Report.Settings;
 using System.Reflection;
@@ -16,6 +17,13 @@ builder.Services.AddScoped<IDatabaseSettings>(sp =>
     return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
 });
 builder.Services.AddControllers();
+
+builder.Services.AddHostedService<KafkaConsumerService>();
+
+builder.Services.AddSingleton<KafkaProducerService>();
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

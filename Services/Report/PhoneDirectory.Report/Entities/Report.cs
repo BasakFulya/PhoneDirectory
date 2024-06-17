@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using PhoneDirectory.Report.Dtos.ReportDtos;
 using System.Text.Json;
 
 namespace PhoneDirectory.Report.Entities
@@ -11,7 +12,7 @@ namespace PhoneDirectory.Report.Entities
         public string ReportID { get; set; }
         public DateTime RequestedDate { get; set; }
         public ReportStatus Status { get; set; }
-        public BsonDocument ReportContent { get; set; }
+        public List<ReportResultDto> ReportContent { get; set; }
     }
     public enum ReportStatus
     {

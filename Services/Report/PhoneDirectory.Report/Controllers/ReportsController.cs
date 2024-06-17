@@ -42,13 +42,6 @@ namespace PhoneDirectory.Report.Controllers
         [Route("api/Report/RequestReport")]
         public async Task<IActionResult> RequestReport()
         {
-            var createReportDto = new CreateReportDto
-            {
-                RequestedDate = DateTime.Now,
-                Status = Entities.ReportStatus.InProgress
-            };
-            await _ReportService.CreateReportAsync(createReportDto);
-
             var persons = _ReportService.GetAllPersonAsync();
             var contactInfos = _ReportService.GetAllContactInfoAsync();
 
@@ -67,7 +60,14 @@ namespace PhoneDirectory.Report.Controllers
                 result.Add(new ReportResultDto { Location = location, NumberOfPerson = numberOfPersonInLocation, NumberOfPhoneNumber = numberOfPhoneNumberInLocation });
             }
 
-            return Ok("Report Initiliazed!");
+            var createReportDto = new CreateReportDto
+            {
+                RequestedDate = DateTime.Now,
+                Status = Entities.ReportStatus.InProgress,
+                ReportContent = result
+            };
+            await _ReportService.CreateReportAsync(createReportDto);
+            return Ok(result);
         }
 
         [HttpDelete]

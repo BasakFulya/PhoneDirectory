@@ -8,6 +8,6 @@ namespace PhoneDirectory.Report.Dtos.ReportDtos
         public string ReportID { get; set; }
         public DateTime RequestedDate { get; set; }
         public ReportStatus Status { get; set; }
-        public BsonDocument ReportContent { get; set; }
+        public List<ReportResultDto> ReportContent { get; set; }
     }
 }

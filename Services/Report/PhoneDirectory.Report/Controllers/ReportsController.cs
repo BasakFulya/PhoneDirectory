@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PhoneDirectory.Person.Entities;
 using PhoneDirectory.Report.Dtos.ReportDtos;
 using PhoneDirectory.Report.Services.ReportService;
 
@@ -48,13 +49,23 @@ namespace PhoneDirectory.Report.Controllers
             };
             await _ReportService.CreateReportAsync(createReportDto);
 
-            var Persons = _ReportService.GetAllPersonAsync();
-            var Locations = _ReportService.GetAllContactInfoAsync();
+            var persons = _ReportService.GetAllPersonAsync();
+            var contactInfos = _ReportService.GetAllContactInfoAsync();
 
-            //var Persons = _PersonService.GetAllPersonAsync();
-            //var ContactInfos = _ContactInfoService.GetAllContactInfoAsync();
-            //var locations = ContactInfos.Result.Where(x => x.Type == Person.Entities.ContactType.Location).ToList();
-            //var numberOfPersons = locations.GroupBy(x => x.Content);
+
+            var locations = contactInfos.Result.Where(x => x.Type == Person.Entities.ContactType.Location).ToList();
+            var uniqueLocation = locations.GroupBy(x => x.Content).Select(y => y.Key);
+            var numberOfPhoneNumbers = contactInfos.Result.Where(x => x.Type == Person.Entities.ContactType.PhoneNumber).ToList();
+            List<ReportResultDto> result = new List<ReportResultDto>();
+
+
+            foreach (var location in uniqueLocation)
+            { 
+                var personIDsInLocation = contactInfos.Result.Where(x => x.Content == location).Select(y => y.PersonID).ToList();
+                var numberOfPersonInLocation = contactInfos.Result.Where(x => x.Content == location).Count();
+                var numberOfPhoneNumberInLocation = numberOfPhoneNumbers.Where(x => personIDsInLocation.Contains(x.PersonID)).Count();
+                result.Add(new ReportResultDto { Location = location, NumberOfPerson = numberOfPersonInLocation, NumberOfPhoneNumber = numberOfPhoneNumberInLocation });
+            }
 
             return Ok("Report Initiliazed!");
         }

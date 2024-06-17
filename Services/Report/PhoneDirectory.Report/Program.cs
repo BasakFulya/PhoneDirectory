@@ -1,16 +1,12 @@
 using Microsoft.Extensions.Options;
-using PhoneDirectory.Person.Services.ContactInfoService;
-using PhoneDirectory.Person.Services.PersonService;
-using PhoneDirectory.Person.Settings;
 using PhoneDirectory.Report.Services.ReportService;
+using PhoneDirectory.Report.Settings;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//// Add services to the container.
 builder.Services.AddScoped<IReportService, ReportService>();
-builder.Services.AddScoped<IPersonService, PersonService>();
-builder.Services.AddScoped<IContactInfoService, ContactInfoService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

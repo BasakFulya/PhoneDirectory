@@ -7,7 +7,7 @@ namespace PhoneDirectory.Person.Services.PersonService
 {
     public class PersonService : IPersonService
     {
-        private readonly IMongoCollection<PhoneDirectory.Person.Entities.Person> _PersonCollection;
+        public readonly IMongoCollection<PhoneDirectory.Person.Entities.Person> _PersonCollection;
         private readonly IMapper _mapper;
 
         public PersonService(IMapper mapper, IDatabaseSettings _databaseSettings)

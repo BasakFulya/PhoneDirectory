@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneDirectory.Person", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneDirectory.Report", "Services\Report\PhoneDirectory.Report\PhoneDirectory.Report.csproj", "{3F19FB8F-8E85-4960-AB10-261CFA380453}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{6B8F7C3C-49FF-46D3-9DBA-0897A1893516}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneDirectory.Tests", "Services\UnitTest\PhoneDirectory.Tests\PhoneDirectory.Tests.csproj", "{51158337-B5CA-4C06-BC8B-87ACD0A8EC94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,10 @@ Global
 		{3F19FB8F-8E85-4960-AB10-261CFA380453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F19FB8F-8E85-4960-AB10-261CFA380453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F19FB8F-8E85-4960-AB10-261CFA380453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51158337-B5CA-4C06-BC8B-87ACD0A8EC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51158337-B5CA-4C06-BC8B-87ACD0A8EC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51158337-B5CA-4C06-BC8B-87ACD0A8EC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51158337-B5CA-4C06-BC8B-87ACD0A8EC94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,8 @@ Global
 		{BBF19265-81D9-49EC-B8AE-974BDAA59972} = {07EEFA65-9CD1-4488-B767-620A6BA066DB}
 		{5FE86624-8A81-4CB0-A9AC-41D1EC6EC3A1} = {E949618E-DC3C-40BA-A942-D80F65D864A5}
 		{3F19FB8F-8E85-4960-AB10-261CFA380453} = {BBF19265-81D9-49EC-B8AE-974BDAA59972}
+		{6B8F7C3C-49FF-46D3-9DBA-0897A1893516} = {07EEFA65-9CD1-4488-B767-620A6BA066DB}
+		{51158337-B5CA-4C06-BC8B-87ACD0A8EC94} = {6B8F7C3C-49FF-46D3-9DBA-0897A1893516}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33090398-8A27-44CE-8EA6-B8D089A36A65}
